@@ -1,0 +1,350 @@
+
+/* Common style */
+.ewps-product-slide figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	// margin: 0px 10px;
+	// background: #3085a3;
+	text-align: center;
+}
+
+.ewps-product-slide figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.ewps-product-slide h4 {
+	cursor: pointer;
+}
+
+.ewps-product-slide figure figcaption {
+	padding: 2em;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ewps-product-slide figure p {
+	color: #333;
+}
+
+.ewps-product-slide figure figcaption::before,
+.ewps-product-slide figure figcaption::after {
+	pointer-events: none;
+}
+
+.ewps-product-slide figure figcaption,
+.ewps-product-slide figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+.ewps-product-slide figure figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.ewps-product-slide figure figcaption h4 {
+	a {
+		color: #333;
+		text-decoration: none;
+	}
+}
+
+.ewps-product-slide figure h4 span {
+	font-weight: 800;
+}
+
+.ewps-product-slide figure h4,
+.ewps-product-slide figure p {
+	margin: 0;
+}
+
+.ewps-product-slide figure p {
+	font-size: 68.5%;
+}
+
+/** individual hover effects */
+
+.wp-block-eedee-woo-product-slider-block {
+
+	&.effect-zoe .ewps-product-slide {
+
+		figure figcaption {
+			top: auto;
+			bottom: 0;
+			padding: 0;
+			// height: 60px;
+			// color: #3c4a50;
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: transform 0.35s;
+			-webkit-transform: translate3d(0,100%,0);
+			transform: translate3d(0,100%,0);
+		}
+
+		p.icon-links {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			padding: 0 20px;
+			padding-bottom: 20px;
+		}
+
+		figure:hover figcaption::before{
+			content: "";
+			width: 100%;
+			height: 100%;
+			background: #fff7;
+			position: absolute;
+			z-index: -1;
+		}
+
+		figure h4 {
+			float: left;
+			padding: 0 20px;
+		}
+
+		figure p.icon-links button {
+			float: right;
+			background: transparent;
+			color: transparent;
+
+			svg {
+				width: auto;
+			}
+		}
+
+		figure:hover p.icon-links button:hover,
+		figure:hover p.icon-links button:focus {
+
+			svg {
+				stroke: #000;
+			}
+		}
+
+		figure p.description {
+			position: absolute;
+			bottom: 60px;
+			padding: 40px;
+			width: 100%;
+			color: #000;
+			text-transform: none;
+			font-size: 90%;
+			opacity: 0;
+			-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+			-webkit-transition: opacity 0.35s;
+			transition: opacity 0.35s;
+			-webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
+		}
+
+		figure h4,
+		figure p.icon-links button {
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: transform 0.35s;
+			-webkit-transform: translate3d(0,200%,0);
+			transform: translate3d(0,200%,0);
+		}
+
+		figure h4 {
+			display: inline-block;
+		}
+
+		figure:hover p.description {
+			opacity: 1;
+		}
+
+		figure:hover figcaption,
+		figure:hover h4,
+		figure:hover p.icon-links button {
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+		}
+
+		figure:hover h4 {
+			-webkit-transition-delay: 0.05s;
+			transition-delay: 0.05s;
+		}
+
+		figure:hover p.icon-links button:nth-child(3) {
+			-webkit-transition-delay: 0.1s;
+			transition-delay: 0.1s;
+		}
+
+		figure:hover p.icon-links button:nth-child(2) {
+			-webkit-transition-delay: 0.15s;
+			transition-delay: 0.15s;
+		}
+
+		figure:hover p.icon-links button:first-child {
+			-webkit-transition-delay: 0.2s;
+			transition-delay: 0.2s;
+		}
+	}
+
+	/*-----------------*/
+	/***** Steve *****/
+	/*-----------------*/
+	&.effect-steve {
+		.slick-list {
+			padding: 30px 0;
+		}
+	}
+
+	&.effect-steve .ewps-product-slide {
+		figure {
+			z-index: auto;
+			overflow: visible;
+			background: #000;
+		}
+
+		figure:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			background: #000;
+			content: '';
+			-webkit-transition: opacity 0.35s;
+			transition: opacity 0.35s;
+			box-shadow: 0 0 25px rgba(0,0,0,0.5);
+			opacity: 0;
+		}
+
+		figure img {
+			opacity: 1;
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: transform 0.35s;
+			-webkit-transform: perspective(1000px) translate3d(0,0,0);
+			transform: perspective(1000px) translate3d(0,0,0);
+		}
+
+		figure:hover:before {
+			opacity: 1;
+		}
+
+		figure:hover img {
+			-webkit-transform: perspective(1000px) translate3d(0,0,21px);
+			transform: perspective(1000px) translate3d(0,0,21px);
+		}
+	}
+
+	/*---------------*/
+	/***** Duke *****/
+	/*---------------*/
+	&.effect-duke .ewps-product-slide {
+		.eedee-add-to-cart-button {
+			padding: 10px;
+		}
+
+		.description {
+			display: none;
+		}
+
+		figure {
+			background: -webkit-linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
+			background: linear-gradient(-45deg, #34495e 0%,#cc6055 100%);
+		}
+
+		figure img,
+		figure p {
+			-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+			transition: opacity 0.35s, transform 0.35s;
+		}
+
+		figure:hover img {
+			opacity: 0.4;
+			-webkit-transform: scale3d(1.6,1.6,1);
+			transform: scale3d(1.6,1.6,1);
+		}
+
+		figure h4 {
+			-webkit-transition: -webkit-transform 0.35s;
+			transition: transform 0.35s;
+
+			a {
+				color: #fff;
+			}
+		}
+
+		figcaption {
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: center;
+			align-items: center;
+			padding: 10px;
+
+			svg {
+				stroke: #fff;
+
+				path#svg_4 {
+					stroke: none;
+					fill: #fff;
+				}
+			}
+		}
+
+		figure p {
+			color: #fff;
+			border: 2px solid #fff;
+			text-transform: none;
+			font-size: 90%;
+			opacity: 0;
+			-webkit-transform: scale3d(0.8,0.8,1);
+			transform: scale3d(0.8,0.8,1);
+			-webkit-transform-origin: 50% -100%;
+			transform-origin: 50% -100%;
+		}
+
+		figure h4 {
+			color: #fff;
+			margin: 10px;
+			border: 2px solid #fff;
+			width: calc(100% - 20px);
+			padding: 10px;
+			-webkit-transform: scale3d(0.8,0.8,1);
+			transform: scale3d(0.8,0.8,1);
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+		}
+
+		figure p.description {
+			display: none;
+		}
+
+		figure:hover h4,
+		figure:hover p {
+			opacity: 1;
+			-webkit-transform: scale3d(1,1,1);
+			transform: scale3d(1,1,1);
+		}
+
+		/* Media queries */
+		@media screen and (max-width: 50em) {
+			.grid figure {
+				display: inline-block;
+				float: none;
+				margin: 10px auto;
+				width: 100%;
+			}
+		}
+	}
+}

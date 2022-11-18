@@ -1,0 +1,41 @@
+{
+  "name": "woo-mailerlite",
+  "version": "1.5.7",
+  "private": true,
+  "description": "Official MailerLite integration for WooCommerce",
+  "directories": {
+    "js": "",
+    "sass": "",
+    "css": "",
+    "build": "./build",
+    "languages": "./languages"
+  },
+  "pot": {
+    "type": "wp-plugin",
+    "textdomain": "woo-mailerlite",
+    "src": "woo-mailerlite.php",
+    "header": {
+      "bugs": "https://mailerlite.com/",
+      "team": "MailerLite <support@mailerlite.com>",
+      "last_translator": "MailerLite <support@mailerlite.com>"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "clean-css": "^4.2.1",
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-checktextdomain": "^1.0.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-compress": "^1.2.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-newer": "^1.1.0",
+    "grunt-potomo": "~3.2.0",
+    "grunt-wp-i18n": "~0.5.1",
+    "grunt-wp-readme-to-markdown": "^0.9.0",
+    "load-grunt-tasks": "~0.2.0"
+  }
+}
